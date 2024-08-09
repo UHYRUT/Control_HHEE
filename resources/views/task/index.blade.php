@@ -26,7 +26,7 @@
         <main class="container">
 
             <div class="card">
-                <div class="card-header">Horas </div>
+                <div class="card-header">Horas Extras</div>
 
                 <div class="card-body">
 
@@ -34,11 +34,11 @@
                         @csrf
                         
                         FECHA
-                        <input  type="date" name="date" id="date" class="form-control"><br>
+                        <div class="col-2"><input  type="date" name="date" id="date" class="form-control"><br></div>
                         HORAS
-                        <input  type="number" name="hora" id="hora" class="form-control"><br>
+                        <div class="col-1"><input  type="number" name="hora" id="hora" class="form-control"><br></div>
                         COLABORADOR
-                        <input  type="text" name="nombre" id="nombre" class="form-control"><br>
+                        <div class="col-2"><input  type="text" name="nombre" id="nombre" class="form-control"><br></div> 
                         Motivo HHEE
                         <input  type="text" name="task" id="task" class="form-control"><br>
                         <input type="submit" value="AGREGAR HHEE" class="btn btn-primary mb-3">
