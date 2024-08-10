@@ -38,7 +38,19 @@
                         HORAS
                         <div class="col-1"><input  type="number" name="hora" id="hora" class="form-control"><br></div>
                         COLABORADOR
-                        <div class="col-2"><input  type="text" name="nombre" id="nombre" class="form-control"><br></div> 
+                        <div class="col-2"><ul class="list-group">
+                            <select class="form-select form-select-sm" name="nombre" id="nombre">
+                                <option selected>Selecciona Persona</option>
+                                <option value="SERGIO GODOY">SERGIO GODOY</option>
+                                <option value="ALEJANDRO SAAVEDRA">ALEJANDRO SAAVEDRA</option>
+                                <option value="JUAN RODRIGUEZ">JUAN RODRIGUEZ</option>
+                                <option value="VICTOR BRAVO">VICTOR BRAVO</option>
+                                <option value="LEOFANOR MENA">LEOFANOR MENA</option>
+                              </select>
+                              <br>
+                        </div>   
+                            
+                           <!-- <input  type="text" name="nombre" id="nombre" class="form-control">-->
                         Motivo HHEE
                         <input  type="text" name="task" id="task" class="form-control"><br>
                         <input type="submit" value="AGREGAR HHEE" class="btn btn-primary mb-3">
@@ -58,7 +70,12 @@
                             </thead>
                             <tbody>
                                 <tr class="">
+                                    <?php $sumahhee=0;?>
+
                                     @foreach ($tasks as $task)
+
+                                       <?php $hhee=$task->hora;?>
+
                                     <td scope="row"> {{$task->date}}</td>
                                     <td scope="row"> {{$task->hora}}</td>
                                     <td scope="row"> {{$task->nombre}}</td>
@@ -72,7 +89,12 @@
 
                                 </tr>
                             </tbody>
+
+                            <?php $sumahhee=$sumahhee+$hhee;?>
+                            
                             @endforeach
+                            <?php echo $sumahhee;?>
+                            
                         </table>
                     </div>
                     
