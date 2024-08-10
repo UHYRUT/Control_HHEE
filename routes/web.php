@@ -24,6 +24,10 @@ Route::get('/', [TaskController::class,'index']);
 Route::post('/', [TaskController::class,'store']);
 Route::delete('/{id}', [TaskController::class,'destroy'])->name('task.destroy');
 
+Route::get('/r', function () {
+    return view('task.resumen');
+});
+
 /*Route::post('/', function () {
     print_r($_POST);
 });*/
